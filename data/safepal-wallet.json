@@ -1,0 +1,33 @@
+{
+  "name": "SafePal Wallet",
+  "description": "SafePal is a comprehensive crypto wallet suite with hardware wallet, mobile app, and browser extension wallet solutions empowering 20M+ users to manage and secure their assets across 100+ blockchains",
+  "short_description": "SafePal is a comprehensive crypto wallet suite",
+  "tags": ["Wallets", "NFTs", "DeFi"],
+  "group": "Group 0",
+  "contracts": [],
+  "audits": [],
+  "verified": false,
+  "dotw": false,
+  "councils_choice": true,
+  "links": {
+    "website": "https://www.safepal.com/en/",
+    "twitter": "https://x.com/iSafePal",
+    "telegram": "t.me/SafePalTG",
+    "discord": "https://discord.com/invite/safepal-909067029791776819"
+  },
+  "twitterName": "@iSafePal",
+  "teamInfo": {
+    "contactEmail": "",
+    "founded": "2018-01-24T00:00:00.000Z",
+    "anonymous": true
+  },
+  "tokens": [],
+  "nft": {},
+  "media": {
+    "logoUrl": "/dapps/safepal-wallet/safepal-wallet-logo.webp",
+    "bannerUrl": "/dapps/safepal-wallet/safepal-wallet-banner.webp",
+    "previewUrl": "/dapps/safepal-wallet/safepal-wallet-preview.webp",
+    "videoUrl": "",
+    "gallery": []
+  }
+}
