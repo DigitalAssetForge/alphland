@@ -68,21 +68,26 @@ const DappPageDetails = ({ dappInfo }: { dappInfo: DappInfo }) => {
           Audits
         </p>
         <p className="font-bold text-xl leading-6 mt-2">
-          {dappInfo.audits.length > 0 ? "Yes" : "No"}
-          {dappInfo.audits.length > 0 && dappInfo.audits[0].url && (
-            <a
-              className="inline-block text-orange leading-6 text-base font-semibold ml-2"
-              href={dappInfo.audits[0].url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              view{" "}
-              <sup>
-                <Image src={expand} alt="expand icon" />
-              </sup>
-            </a>
-          )}
+          {Array.isArray(dappInfo.audits) && dappInfo.audits.length > 0
+            ? "Yes"
+            : "No"}
+          {Array.isArray(dappInfo.audits) &&
+            dappInfo.audits.length > 0 &&
+            dappInfo.audits[0].url && (
+              <a
+                className="inline-block text-orange leading-6 text-base font-semibold ml-2"
+                href={dappInfo.audits[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                view{" "}
+                <sup>
+                  <Image src={expand} alt="expand icon" />
+                </sup>
+              </a>
+            )}
         </p>
+
         <p className="text-light-charcoal dark:text-clay font-medium text-xl leading-6 mt-8 lg:mt-10">
           Dapp contract/s
         </p>
@@ -124,8 +129,11 @@ const DappPageDetails = ({ dappInfo }: { dappInfo: DappInfo }) => {
           Has a token?
         </p>
         <p className="font-bold text-xl leading-6 mt-2">
-          {dappInfo.tokens.length > 0 ? "Yes" : "No"}
+          {Array.isArray(dappInfo.tokens) && dappInfo.tokens.length > 0
+            ? "Yes"
+            : "No"}
         </p>
+
         <p className="text-light-charcoal dark:text-clay font-medium text-xl leading-6 mt-8 lg:mt-10">
           Tokens
         </p>

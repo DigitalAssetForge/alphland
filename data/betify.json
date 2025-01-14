@@ -2,7 +2,16 @@
   "name": "Betify",
   "description": "Get ready to revolutionize your gaming experience with Betify - the ultimate blockchain betting protocol on Alephium!",
   "short_description": "Ultimate betting protocol on Alephium",
-  "tags": ["DeFi", "Games", "Social", "ComingSoon"],
+  "tags": [
+    "Crowdfunding",
+    "Blockchain",
+    "DeFi",
+    "Transparency",
+    "Innovation",
+    "Staking",
+    "FundingPlatform",
+    "Alephium"
+  ],
   "contracts": [],
   "audits": [
     {

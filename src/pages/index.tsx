@@ -165,28 +165,23 @@ const Home = ({
 };
 
 export const getStaticProps = async () => {
-  const dapps = await getAllDapps();
-  const ratingsParsed = await getRatings();
+  const dappCards = await getAllDapps();
 
-  const parsedDapps = dapps.map((dapp: DappInfo & { url: string }) => ({
-    short_description: dapp.short_description,
-    title: dapp.name,
-    tags: dapp.tags,
-    url: dapp.url,
-    logo: dapp.media.logoUrl,
-    image: dapp.media.previewUrl,
-    featured: dapp.dotw,
-    annonymous: dapp.teamInfo.anonymous,
-    audits: dapp.audits,
-    verified: dapp.verified,
-    councils_choice: dapp.councils_choice,
-  }));
+  // Remplace `undefined` par `null` dans toutes les données
+  const sanitizedDappCards = dappCards.map((dapp) =>
+    JSON.parse(
+      JSON.stringify({
+        ...dapp,
+        audits: dapp.audits || [], // Assurez-vous que audits est toujours un tableau
+        contracts: dapp.contracts || [], // Assurez-vous que contracts est toujours un tableau
+        tokens: dapp.tokens || [], // Assurez-vous que tokens est toujours un tableau
+      })
+    )
+  );
 
   return {
     props: {
-      dappCards: parsedDapps,
-      featuredDapp: null, //parsedDapps.filter((dapp) => dapp.featured)[0],
-      ratings: ratingsParsed,
+      dappCards: sanitizedDappCards,
     },
   };
 };
