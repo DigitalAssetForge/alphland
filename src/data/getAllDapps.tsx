@@ -20,13 +20,11 @@ export const getAllDapps = async (): Promise<
     if (content) {
       try {
         const parsedContent = JSON.parse(content);
-
-        // Remplacer les valeurs indéfinies par des valeurs par défaut
         dapps.push({
           ...parsedContent,
-          audits: parsedContent.audits || [], // Définit un tableau vide si undefined
-          contracts: parsedContent.contracts || [], // Définit un tableau vide si undefined
-          tokens: parsedContent.tokens || [], // Définit un tableau vide si undefined
+          audits: parsedContent.audits || [],
+          contracts: parsedContent.contracts || [],
+          tokens: parsedContent.tokens || [],
           url: `${el.toLowerCase()}`,
         });
       } catch (error) {

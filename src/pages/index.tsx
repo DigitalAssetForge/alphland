@@ -167,14 +167,13 @@ const Home = ({
 export const getStaticProps = async () => {
   const dappCards = await getAllDapps();
 
-  // Remplace `undefined` par `null` dans toutes les données
   const sanitizedDappCards = dappCards.map((dapp) =>
     JSON.parse(
       JSON.stringify({
         ...dapp,
-        audits: dapp.audits || [], // Assurez-vous que audits est toujours un tableau
-        contracts: dapp.contracts || [], // Assurez-vous que contracts est toujours un tableau
-        tokens: dapp.tokens || [], // Assurez-vous que tokens est toujours un tableau
+        audits: dapp.audits || [],
+        contracts: dapp.contracts || [],
+        tokens: dapp.tokens || [],
       })
     )
   );
